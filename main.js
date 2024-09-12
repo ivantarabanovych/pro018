@@ -1,34 +1,24 @@
-class Person {
-    constructor(name, age, career){
-        this.name = name;
-        this.age = age;
-        this.career = career; 
-    }
-
-    greet(){
-        console.log(`Hi my name is ${this.name}, I'm ${this.age} years old, works ${this.career}!`);
-    }
+class Shape {
+  calculateArea() {
+    console.log("Shape does not indificate!");
+    return 0;
+  }
 }
 
-class Student extends Person{
-    constructor(name, age, career, studentId){
-        super(name, age, career);
-        this.studentId = studentId;
+class Circle extends Shape{
+    constructor(radius){
+        super();
+        this.radius = radius;
     }
 
-    greet(){
-        console.log(`Hi my name is ${this.name}, I'm ${this.age} years old, works ${this.career} and my studentID is ${this.studentId}!`);
-        
-    }
+
+calculateArea() {
+    const area = Math.PI * Math.pow(this.radius, 2);
+    console.log(`the area of ​​a circle with ${this.radius} radius equal to ${area.toFixed(2)}`);
+    return area;
+}
 }
 
-const person1 = new Person ('Ivan', '21', 'admin');
-const person2 = new Person ('Valentyna', '21', 'finansist');
+const circle1 = new Circle(18);
 
-person1.greet();
-person2.greet();
-
-const student1 = new Student('Ivan', '21', 'admin', 'TE13160019');
-
-student1.greet();
-
+circle1.calculateArea();
